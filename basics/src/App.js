@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react'
-import LifecycleParent from './components/lifecycle/LifecycleParent';
+// import LifecycleParent from './components/lifecycle/LifecycleParent';
 // import StateHook from './components/hooks/StateHook';
 // import ReducerHook from './components/hooks/ReducerHook';
 // import EffectHook from './components/hooks/EffectHook';
