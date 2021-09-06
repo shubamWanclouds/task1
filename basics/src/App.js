@@ -7,7 +7,8 @@ import React, { Component } from 'react'
 // import RefHook from './components/hooks/RefHook';
 // import LayoutHook from './components/hooks/LayoutHook';
 // import ImperativeHook from './components/hooks/ImperativeHook';
-import ContextHook from './components/hooks/ContextHook';
+// import ContextHook from './components/hooks/ContextHook';
+import MemoHook from './components/hooks/MemoHook';
 
 class App extends Component {
   render() {
@@ -20,7 +21,8 @@ class App extends Component {
         {/* <RefHook /> */}
         {/* <LayoutHook /> */}
         {/* <ImperativeHook /> */}
-        <ContextHook />
+        {/* <ContextHook />   */}
+        <MemoHook />  
       </div>
     )
   }
