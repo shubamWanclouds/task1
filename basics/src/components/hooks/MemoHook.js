@@ -29,7 +29,7 @@ export default function MemoTutorial() {
     return longestName;
   };
 
-  const getLongestName = useMemo(() => findLongestName(data), [toggle]);
+  const getLongestName = useMemo(() => findLongestName(data),[]);
 
   return (
     <div className="App">
