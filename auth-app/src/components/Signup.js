@@ -5,7 +5,11 @@ class Signup extends Component {
   
   constructor(props) {
     super(props)
-  
+
+    console.log(this.props.user.uname)
+    console.log(this.props.user.email)
+    console.log(this.props.user.passwd)
+    
     this.state = {
        uname:'',
        email:'',
@@ -14,10 +18,11 @@ class Signup extends Component {
   }
 
   handleSubmit = (event) => {
-    console.log(this.props)
-    event.preventDefault()
+    // event.preventDefault()
     this.props.signup(this.state)
   }
+
+  
   
   render() {
     const {uname,email,passwd} = this.state

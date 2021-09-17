@@ -1,12 +1,13 @@
-import Signup from "./Signup";
 import {signup} from '../redux'
 import { connect } from 'react-redux'
-const mapDispatchToProps = dispatch => ({
-  
+import SignupView from "./SignupView";
+
+const mapDispatchToProps = dispatch => {
+  return {
     signup: data => dispatch(signup(data))
+  }
+}
 
-})
 
 
-
-export default connect (null, mapDispatchToProps) (Signup)
+export default connect (null, mapDispatchToProps) (SignupView)

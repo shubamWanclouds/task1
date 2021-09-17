@@ -1,7 +1,9 @@
 import { createStore } from "redux";
-import signupReducer from './signup/signupReducer'
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistStore } from "redux-persist";
+import signupReducer from './signup/signupReducer'
 
-const store = createStore(signupReducer,composeWithDevTools())
+export const store = createStore(signupReducer,composeWithDevTools())
+export const persistor = persistStore(store)
 
-export default store
+// export default {store, persistor}

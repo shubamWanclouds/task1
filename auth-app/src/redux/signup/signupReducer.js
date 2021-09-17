@@ -1,20 +1,28 @@
 import {SIGN_UP} from './signupTypes'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 const initialState = {
-  uname:'',
-  email:'',
-  password:''
+  user: {
+    uname:'',
+    email:'',
+    passwd:''
+  }
 }
 
 const signupReducer = ( state = initialState, action ) => {
   switch(action.type) {
     case SIGN_UP: return {
-      uname: action.payload.uname,
-      email: action.payload.email,
-      password: action.payload.passwd
+      user:action.payload
     }
     default: return state
   }
 }
 
-export default signupReducer
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist:['signupReducer']
+}
+
+export default persistReducer(persistConfig, signupReducer)

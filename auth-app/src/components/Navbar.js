@@ -12,10 +12,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/Signup">Join</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Login">Login</Link>
+              <Link className="nav-link active" aria-current="page" to="">Signout</Link>
             </li>
           </ul>
         </div>
