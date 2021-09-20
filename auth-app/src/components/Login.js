@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
-function Login({user}) {
+function Login() {
   let history = useHistory()
   
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPasswd, setLoginPasswd] = useState('')
+  const [loginError, setLoginError] = useState('')
 
   const handleLogin = (event) => {
     event.preventDefault()
-    if((loginEmail === user.email) && (loginPasswd === user.passwd))
-      history.push('/home')
+    let userData = JSON.parse(localStorage.getItem("userData"))
+    console.log(userData)
+    if((loginEmail === userData.email) && (loginPasswd === userData.passwd))
+      {
+        userData["isLoggedIn"] = true
+        localStorage.setItem('userData', JSON.stringify(userData))
+        history.push('/')
+      }
     else
-      alert("Wrong Id/Password")  
+      setLoginError("Wrong Email Id / Password")  
   }
 
   return (
@@ -31,6 +38,7 @@ function Login({user}) {
           <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
           <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
         </div>
+        <div style={{color:'red',fontSize:15,margin:5}}>{loginError}</div>
         <button type="submit" className="btn btn-primary">Login</button> &nbsp;&nbsp; <br />
         <Link id="emailHelp" className="form-text mt-5" to="/Signup">New user?</Link>
       </form>

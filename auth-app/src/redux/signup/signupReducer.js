@@ -1,6 +1,4 @@
 import {SIGN_UP} from './signupTypes'
-import { persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
 
 const initialState = {
   user: {
@@ -19,10 +17,4 @@ const signupReducer = ( state = initialState, action ) => {
   }
 }
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist:['signupReducer']
-}
-
-export default persistReducer(persistConfig, signupReducer)
+export default signupReducer
