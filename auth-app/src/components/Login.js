@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 function Login() {
@@ -8,12 +8,15 @@ function Login() {
   const [loginPasswd, setLoginPasswd] = useState('')
   const [loginError, setLoginError] = useState('')
 
+  const rememberMeRef = useRef(null)
+
   const handleLogin = (event) => {
     event.preventDefault()
     let userData = JSON.parse(localStorage.getItem("userData"))
     console.log(userData)
     if((loginEmail === userData.email) && (loginPasswd === userData.passwd))
       {
+        console.log(rememberMeRef.current.value)
         userData["isLoggedIn"] = true
         localStorage.setItem('userData', JSON.stringify(userData))
         history.push('/')
@@ -36,7 +39,7 @@ function Login() {
         </div>
         <div className="mb-3 form-check">
           <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-          <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
+          <label className="form-check-label" htmlFor="exampleCheck1" ref={rememberMeRef}>Remember Me</label>
         </div>
         <div style={{color:'red',fontSize:15,margin:5}}>{loginError}</div>
         <button type="submit" className="btn btn-primary">Login</button> &nbsp;&nbsp; <br />

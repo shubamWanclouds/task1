@@ -33,7 +33,7 @@ function SignupView({signup}) {
       }
       signup(userData)
       localStorage.setItem('userData', JSON.stringify(userData))
-      history.push('/')
+      history.push('/login')
     }
     else {
     }
