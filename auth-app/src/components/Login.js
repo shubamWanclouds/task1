@@ -14,14 +14,19 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault()
     let userData = JSON.parse(localStorage.getItem("userData"))
-    if((loginEmail === userData.email) && (loginPasswd === userData.passwd))
+    if(userData)
+    {
+      if((loginEmail === userData.email) && (loginPasswd === userData.passwd))
       {
         userData["isLoggedIn"] = true
         localStorage.setItem('userData', JSON.stringify(userData))
         history.push('/')
       }
-    else
-      setLoginError("Wrong Email Id / Password")  
+      else
+        setLoginError("Wrong Email Id / Password")  
+    } else {
+      setLoginError("No User Found") 
+    }
   }
 
   return (

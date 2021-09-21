@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React,{useEffect} from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import '../App.css'
 
 export default function Sidebar() {
+  
   return (
     <div>
       <nav class="sideBar">
@@ -14,10 +15,10 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/about">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               <span>About</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

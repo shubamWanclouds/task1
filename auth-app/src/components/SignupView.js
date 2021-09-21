@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { useHistory } from 'react-router'
+import { useHistory, Link } from 'react-router-dom'
 import wave from '../assets/wave.png'
 import user from '../assets/avatar.svg'
 import './SignupView.css'
@@ -95,6 +95,7 @@ function SignupView({signup}) {
             <label className="form-check-label" htmlFor="exampleCheck1">I accept the terms & conditions</label>
           </div>
           <button type="submit" className="btn btn-success">Register</button>
+          <Link id="emailHelp" className="form-text mt-5" to="/Login" style={{fontSize:15, marginTop:5,color:'#000'}}>Existing user?</Link>
         </form>
     </div>
 
