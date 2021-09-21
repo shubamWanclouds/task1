@@ -9,7 +9,7 @@ import About from "./components/About";
 function App() {
     
     let userData = JSON.parse(localStorage.getItem("userData"))
-    console.log(userData["isLoggedIn"])
+    // console.log(userData["isLoggedIn"])
 
     return (
     <div className="App">
@@ -17,10 +17,10 @@ function App() {
         <Switch>
           <Route path="/login" exact component={Login}  />
           <Route path="/signup" exact component={Signup} />
-          <Route path="/dashboard" exact component={Dashboard} />
+          {/* <Route path="/dashboard" exact component={Dashboard} /> */}
 
-          <GuardedRoute path="/home" component={Home} auth = {userData["isLoggedIn"]} />
-          <GuardedRoute path='/' component={Home} auth = {userData["isLoggedIn"]}/>
+          {/* <GuardedRoute path="/home" component={Home} auth = {userData && userData["isLoggedIn"]} /> */}
+          <GuardedRoute path='/' component={Home} auth = {userData && userData["isLoggedIn"]}/>
         </Switch>
         </Router>
     </div>

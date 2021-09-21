@@ -14,10 +14,10 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/about">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               <span>About</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
