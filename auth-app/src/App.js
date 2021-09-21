@@ -9,6 +9,7 @@ import About from "./components/About";
 function App() {
     
     let userData = JSON.parse(localStorage.getItem("userData"))
+    console.log(userData["isLoggedIn"])
 
     return (
     <div className="App">

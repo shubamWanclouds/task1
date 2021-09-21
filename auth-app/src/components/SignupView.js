@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import { useHistory } from 'react-router'
+import wave from '../assets/wave.png'
+import user from '../assets/avatar.svg'
+import './SignupView.css'
 
 function SignupView({signup}) {
   const validEmailRegex =  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -29,7 +32,6 @@ function SignupView({signup}) {
         email,
         passwd,
         isLoggedIn:false,
-        rememberMe:false
       }
       signup(userData)
       localStorage.setItem('userData', JSON.stringify(userData))
@@ -64,31 +66,39 @@ function SignupView({signup}) {
   }
 
   return (
-    <div className="container-sm mt-5">
+    <div className="form" style={{background:`url(${wave})`}}>
         <form onSubmit={handleSubmit}>
-          <h1 className="text-center">REGISTER HERE</h1>
+          <div className="imgcontainer">
+            <img src={user} alt="icon" className="icon"/>
+            <h2>Sign Up</h2>
+          </div>
           <div className="mb-3">
-            <label htmlFor="username" className="form-label">Username</label>
-            <input name="uname" type="text" className="form-control" value={uname} onChange={handleChange} required/>
+            <label htmlFor="username" className="form-label" style={{fontWeight:'bold'}}>Username</label>
+            <input name="uname" type="text" className="form-control" value={uname} onChange={handleChange} 
+            placeholder="Username" required/>
             <div style={{color:'red',fontSize:15}}>{unameError}</div>
           </div>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
-            <input name="email" type="email" className="form-control" value={email} onChange={handleChange} required/>
+            <label htmlFor="email" className="form-label" style={{fontWeight:'bold'}}>Email address</label>
+            <input name="email" type="email" className="form-control" value={email} onChange={handleChange} 
+            placeholder="Email" required/>
             <div style={{color:'red',fontSize:15}}>{emailError}</div>
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input name="passwd" type="password" className="form-control" value={passwd} onChange={handleChange} required/>
+            <label htmlFor="password" className="form-label" style={{fontWeight:'bold'}}>Password</label>
+            <input name="passwd" type="password" className="form-control" value={passwd} onChange={handleChange} 
+            placeholder="Password" required/>
             <div style={{color:'red',fontSize:15}}>{passwdError}</div>
           </div>
           <div className="mb-3 form-check">
             <input type="checkbox" className="form-check-input" id="exampleCheck1" required/>
             <label className="form-check-label" htmlFor="exampleCheck1">I accept the terms & conditions</label>
           </div>
-          <button type="submit" className="btn btn-primary">Register</button>
+          <button type="submit" className="btn btn-success">Register</button>
         </form>
     </div>
+
+    
   )
 }
 

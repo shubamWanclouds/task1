@@ -5,26 +5,26 @@ body{
 
 .form{
   width:30%;
-  padding:10px;
-  margin: 7% auto;
+  padding:0px;
+  margin: 2% auto;
   box-shadow: rgba(0, 0, 0, 0.445) 0px 10px 34px -15px;
   padding:30px;  
 }
 
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0
+  margin: 14px 0 7px 0
 }
 
 img.icon {
-width: 80px;
-border-radius: 50%;
+  width: 80px;
+  border-radius: 50%;
 }  
 
 input[type=text], input[type=password],input[type=email] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 15px 0;
+  padding: 4px 8px;
+  margin: 3px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -35,8 +35,8 @@ input[type=text], input[type=password],input[type=email] {
 button {
   background-color: #198754;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 7px 10px;
+  margin: 4px 0;
   border: none;
   cursor: pointer;
   width: 100%;
